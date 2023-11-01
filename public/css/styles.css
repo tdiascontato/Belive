@@ -1,0 +1,15 @@
+*{
+    font-family: 'Lora', serif;
+}
+.navBar{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    padding: 0.5rem auto;
+}
+.navBarUl{
+    display: flex;
+    gap: 0.5rem;
+    list-style: none;
+    text-decoration: none;
+}
