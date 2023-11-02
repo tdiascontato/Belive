@@ -2,9 +2,13 @@
 @section('title', 'Login')
 @section('content')
     <h1>Hello World - Login</h1>
-    <a href="/">Siga para o início</a>
-    <a href="/perfil">Siga para o Perfil</a>
-    <a href="/cadastro">Ir para o cadastro</a>
-    <a href="/login">Ir para o login</a>
-    <a href="/dashboard">Ir para o dashboard</a>
+    <form class="formLogin" action="#" method="post">
+        <label for="email">Email:</label>
+        <input type="email" name="email" holdername="email" required><br><br>
+
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" holdername="senha" required><br><br>
+
+        <input class="btnLogin" type="submit" value="Entrar">
+    </form>
 @endsection

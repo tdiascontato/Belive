@@ -1,15 +1,157 @@
 *{
-    font-family: 'Lora', serif;
+    font-family: 'Roboto', serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
+body{
+    background-color: black;
+}
+h1 {
+    color: white;
+    padding: 20px;
+    text-align: center;
+    cursor: default;
+}
+/*Header*/
+.header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-left:2rem;
+    padding-right:2rem;
+}
+/* NavBar */
 .navBar{
     display: flex;
-    justify-content:space-around;
     align-items: center;
-    padding: 0.5rem auto;
+    padding: 2rem 0;
+    background-color: transparent;
+}
+.navBar a{
+    text-decoration: none;
+    color: white;
+}
+.navBar a:hover{
+    color:aquamarine;
 }
 .navBarUl{
     display: flex;
+    padding-left: 2rem;
     gap: 0.5rem;
     list-style: none;
     text-decoration: none;
+}
+/*Inputs Search*/
+.search{
+    display: flex;
+    justify-content: end;
+}
+.inputSearch{
+    display: flex;
+    justify-self: end;
+    align-self: center;
+    width: 70%;
+    height: 40%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.4rem;
+    color: black;
+    font-weight: bolder;
+}
+.btnSearch{
+    display: flex;
+    justify-self: end;
+    align-self: center;
+    padding: 1rem;
+    width: max-content;
+    height: max-content;
+    cursor: pointer;
+    background-color: transparent;
+    color: aqua;
+
+}
+.inputSearch:focus, .btnSearch{
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+/* card */
+.postscards{
+    display: flex;
+    padding: 2rem;
+
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin: auto;
+    border-radius: 0.5rem;
+    width: 20rem;
+    height: max-content;
+    background-color: #333;
+    text-align: justify;
+    cursor: pointer;
+}
+.imageCard{
+    height: 20rem;
+}
+/*formulários*/
+.formPost, .formLogin, .formCadastro {
+    background-color: transparent;
+    color: rgb(32, 186, 145);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25rem;
+    padding: 1rem;
+    margin: 0 auto;
+    border: 0.1rem solid aquamarine;
+    border-radius: 0.5rem;
+}
+.formPost label, .formLogin label,  .formCaastro label{
+    display: block;
+    font-size: large;
+    font-weight: bold;
+    margin-top: 0.2rem;
+}
+.formPost input,.formPost textarea, .formLogin input, .formLogin textarea, .formCadastro input, .formCadastro textarea{
+    width: 100%;
+    padding: 1rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    border: none;
+    border-radius: 0.5rem;
+    color:rgb(32, 186, 145);
+    font-weight: bolder;
+}
+.formPost input:focus, .formPost textarea:focus, .formLogin input:focus,  .formLogin textarea:focus, .formCadastro input:focus,  .formCadastro textarea:focus{
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+
+.formPost .btnFormPost,  .formLogin .btnLogin, .formCadastro .btnCadastro{
+    background-color: rgb(32, 186, 145);
+    color: white;
+    width: 50%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.formPost .btnFormPost:hover, .formLogin .btnLogin:hover, .formCadastro .btnCadastro:hover{
+    transition:  0.3s ease-in-out;
+    background-color: #555;
+    color:aquamarine
+}
+.footer{
+    padding: 7rem 2rem;
+    text-align: start;
+}
+.footer a{
+    text-decoration: none;
+    color: white;
+    padding: 0 2rem 0 0;
 }
