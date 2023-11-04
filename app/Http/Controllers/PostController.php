@@ -33,4 +33,8 @@ class PostController extends Controller
         $post->save();
         return redirect('/')->with('msg', 'Post criado com sucesso!');
     }
+    public function show($id) {
+        $post = Post::findOrFail($id);
+        return view('posts.show', ['post' =>$post]);
+    }
 }
