@@ -127,6 +127,10 @@ h1 {
     margin: 0 auto;
     cursor: pointer;
 }
+.noPost{
+    color:rgb(246, 148, 148);
+    font-weight: bolder;
+}
 /* Post Page */
 .mainPost{
     display: flex;
@@ -184,6 +188,7 @@ h1 {
     background-color: #555;
     color:aquamarine
 }
+/* Footer*/
 .footer{
     padding: 7rem 2rem;
     text-align: start;

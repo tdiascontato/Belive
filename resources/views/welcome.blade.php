@@ -16,7 +16,7 @@
 
             <img src="/img/posts/{{$post->image}}" alt="{{$post->title}}"/>
             <h2>{{$post->title}}</h2>
-            <h3>{{$post->user}}</h3>
+            <h3>{{$post->user['name']}}</h3>
             <h4>{{$post->local}}</h4>
             <text>{{$post->text}}</text>
             <p>{{$post->category}}</p>
@@ -26,6 +26,14 @@
 
         </div>
         @endforeach
+
+        @if(count($posts) == 0 && $search)
+        <p class="noPost"> Não foi possível encontrar alguma história com {{$search}}..</p>
+        <br/><a href="/">Voltar para Página Inicial</a>
+        @elseif(count($posts)==0)
+        <p class="noPost">Não há histõrias disponíveis..</p>
+        @endif
+
     </div>
     </main>
 @endsection

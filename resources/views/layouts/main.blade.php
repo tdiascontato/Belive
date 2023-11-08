@@ -18,20 +18,31 @@
                 <a class="logo" href="/">BeLive</a>
                 <ul class="navBarUl">
                     <li> <a href="/posts/create">Criar Post</a></li>
-                    <li> <a href="/cadastro">cadastro</a></li>
+                    @auth
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><form action="/logout" method="post">
+                        @csrf
+                        <a href="/logout"
+                        onclick="event.preventDefault();
+                        this.closest('form').submit();">Logout</a>
+                    </form></li>
+                    @endauth
+                    @guest
+                    <li> <a href="/register">cadastro</a></li>
                     <li> <a href="/login">Login</a></li>
+                    @endguest
                 </ul>
             </nav>
-            <div class="search">
-                <input class="inputSearch" type="text"/>
-                <input class="btnSearch" value="?" type="button"/>
-            </div>
+            <form action="/" method="get" class="search">
+                <input  type="text" placeholder="Pesquisar história.." class="inputSearch" name='search' />
+                <input class="btnSearch" value="?" type="submit"/>
+            </form>
         </header>
 
         @yield('content')
         <footer class="footer">
             <a href="/">Siga para o início</a>
-            <a href="/cadastro">Ir para o cadastro</a>
+            <a href="/register">Ir para o cadastro</a>
             <a href="/login">Ir para o login</a>
             <a href="/dashboard">Ir para o dashboard</a>
             <a href="https://instagram.com/finefellings"> &copy; finefellings2024</a>

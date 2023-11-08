@@ -9,8 +9,15 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function index() {
-        $posts = Post::all();
-        return view('welcome', ['posts' => $posts]);
+        $search = request('search');
+        if($search){
+            $posts = Post::where([
+                ['title', 'like', '%'.$search.'%']
+                ])->get();
+        }else{
+            $posts = Post::all();
+        }
+            return view('welcome', ['posts' => $posts, 'search' => $search]);
     }
 
     public function create() {
@@ -30,6 +37,8 @@ class PostController extends Controller
             $request->image->move(public_path('/img/posts'), $imageName);
             $post->image = $imageName;
         }
+        $user = auth()->user();
+        $post->user_id = $user->id;
         $post->save();
         return redirect('/')->with('msg', 'Post criado com sucesso!');
     }
