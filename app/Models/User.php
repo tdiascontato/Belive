@@ -60,6 +60,10 @@ class User extends Authenticatable
     ];
 
     public function posts(){
-        return $this->hasMany('App\Models\Event');
+        return $this->hasMany('App\Models\Post');
+    }
+    public function postsAsParticipant(){
+        // return $this->belongsToMany(Post::class, 'post_user', 'user_id', 'post_id');
+         return $this->belongsToMany('App\Models\Post');
     }
 }

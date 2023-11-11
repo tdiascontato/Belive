@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -44,6 +45,37 @@ class PostController extends Controller
     }
     public function show($id) {
         $post = Post::findOrFail($id);
-        return view('posts.show', ['post' =>$post]);
+        $postOwner = User::where('id', $post->user_id)->first()->toArray();
+        return view('posts.show', ['post' =>$post, 'postOwner'=>$postOwner]);
+    }
+
+    public function dashboard() {
+        $user = auth()->user();
+        $posts = $user->posts;
+        return view('posts.dashboard', ['posts' => $posts]);
+    }
+
+    public function destroy($id){
+        Post::findorFail($id)->delete();
+        return redirect('/dashboard')->with('msg','História excluída com sucesso!');
+    }
+
+    public function edit($id) {
+        $user = auth()->user();
+        $post = Post::findOrFail($id);
+        if($user->id != $post->user->id){
+            return redirect('/')->with('msg',"It's not your post!");
+        }
+        return view('posts.edit', ['post'=>$post]);
+    }
+
+    public function update(Request $request) {
+        Post::findOrFail($request->id)->update($request->all());
+        return redirect('/dashboard')->with('msg','A história foi atualizado!');
+    }
+    public function joinPost($id) {
+        $user = auth()->user();
+        $user->postsAsParticipant()->attach($id);//nao sei porque o erro
+        return redirect('/')->with('msg','reação top!');
     }
 }

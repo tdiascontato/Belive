@@ -80,17 +80,16 @@ h1 {
     display: grid;
     place-items: center;
     width: 20rem;
-    height: 4rem;
+    height: 2rem;
     margin: 0 auto;
     text-align: center;
     border: aquamarine;
     border-radius: 0.5rem;
-    background-color: aqua;
+    background-color: rgb(208, 249, 249);
 }
 .flashMessages p{
     color: black;
-    font-weight: bold;
-    font-size: x-large;
+    font-size: large;
     text-align: center;
 }
 
@@ -119,6 +118,9 @@ h1 {
     overflow: hidden;
     cursor: default;
 }
+.card img{
+    height: 55%;
+}
 .card input{
     background-color: white;
     width: 50%;
@@ -137,7 +139,20 @@ h1 {
     align-items: center;
     justify-content: center;
 }
-
+.btnInteration{
+    height: max-content;
+    background-color: #363636;
+    color: rgb(255, 242, 127);
+    width: 50%;
+    border: none;
+    border-radius: 0.5rem;
+    margin: 0.2rem auto;
+    cursor: pointer;
+}
+.btnInteration:hover{
+    color: rgb(245, 222, 15);
+    transition: 0.4s ease;
+}
 /*formulários*/
 .formPost, .formLogin, .formCadastro {
     background-color: transparent;
@@ -187,6 +202,44 @@ h1 {
     transition:  0.3s ease-in-out;
     background-color: #555;
     color:aquamarine
+}
+.formPost img{
+    width: 30%;
+    border-radius: 1rem;
+}
+/* Dashboard */
+.mainDashboard{
+    display: grid;
+    justify-content: left;
+    width: 40vw;
+    margin: 0 auto;
+}
+.mainDashboard p,.mainDashboard a{
+    color: aquamarine;
+}
+.mainDashboard thead tr, .mainDashboard tbody tr{
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    place-items: center;
+}
+#btnDelete, .aShowDashboard, .aEditDashboard{
+    background-color: transparent;
+    color: aquamarine;
+    border: none;
+    font-size: medium;
+    text-decoration: none;
+    cursor: pointer;
+}
+#btnDelete:hover{
+    color: red;
+    transition: 0.4s ease;
+}
+.aShowDashboard:hover{
+    color: rgb(255, 247, 1);
+}
+.aEditDashboard:hover{
+    color: rgb(0, 47, 255);
 }
 /* Footer*/
 .footer{

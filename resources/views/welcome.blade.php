@@ -15,7 +15,7 @@
         <div class="card">
 
             <img src="/img/posts/{{$post->image}}" alt="{{$post->title}}"/>
-            <h2>{{$post->title}}</h2>
+            <h2>{{$post->title}}</h2> 
             <h3>{{$post->user['name']}}</h3>
             <h4>{{$post->local}}</h4>
             <text>{{$post->text}}</text>
