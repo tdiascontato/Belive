@@ -3,5 +3,6 @@
 ÇLayout simples onde justificado centralemnte ficarão duas colunas de post rodantes.
 Possui cadastro e logins simples.
 Possui página particular para post e perfil de usuário.
-Os posts circulam durante 48h e depois são excluidos automáticamente.
+Possui dashboard para edição e delete do post antes do período de exclusão.
+Os posts circulam durante 24h e depois são excluidos automáticamente.
 @finefellings
