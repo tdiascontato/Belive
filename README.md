@@ -1,7 +1,7 @@
 ## Projeto Belive
 ### Minha primeira rede social dedicada a publicações de histórias curtas e mídias
 
-O Projeto Belive é uma plataforma simples com um layout intuitivo. No centro, encontram-se duas colunas de postagens em constante rotação. A plataforma inclui um sistema de cadastro e login simplificado, proporcionando uma experiência fácil e acessível.
+O Projeto Belive é uma plataforma simples com um layout intuitivo em Laravel. No centro, encontram-se duas colunas de postagens em constante rotação. A plataforma inclui um sistema de cadastro e login simplificado, proporcionando uma experiência fácil e acessível.
 
 **Recursos Principais:**
 - **Página de Perfil e Postagem:** Cada usuário tem uma página exclusiva para suas postagens e perfil.
