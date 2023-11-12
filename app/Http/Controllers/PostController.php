@@ -78,4 +78,9 @@ class PostController extends Controller
         $user->postsAsParticipant()->attach($id);//nao sei porque o erro
         return redirect('/')->with('msg','reação top!');
     }
+    public function leavePost($id) {
+        $user = auth()->user();
+        $user->postsAsParking()->detach($id);
+        return redirect('/')->with('msg','Não é mais top!');
+    }
 }
