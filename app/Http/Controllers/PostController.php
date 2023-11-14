@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Post;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -40,6 +41,7 @@ class PostController extends Controller
         }
         $user = auth()->user();
         $post->user_id = $user->id;
+        $post->scheduled_for_deletion_at = Carbon::now()->addHours(24);
         $post->save();
         return redirect('/')->with('msg', 'Post criado com sucesso!');
     }
