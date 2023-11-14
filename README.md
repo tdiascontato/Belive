@@ -9,6 +9,7 @@ O Projeto Belive é uma plataforma simples com um layout intuitivo em Laravel. N
 - **Exclusão Automática:** As postagens circulam por 24 horas e são excluídas automaticamente após esse período.
 
 **Conta do Projeto:**
+- Email: tdiascontato@gmail.com
 - Instagram: @finefellings
 
 ![image](https://github.com/tdiascontato/Belive/assets/98658691/26bf8307-b1e6-42ba-b0cd-f4bf87ffe528)
